@@ -3,8 +3,8 @@ const searchInput = document.querySelector(".search_area");
 const navbar = document.querySelector(".navbar");
 const navbarTitle = document.querySelector(".title");
 
-function fetchData(searchEl) {
-  const apiUrl = `http://213.230.120.247/kinoijro/hs/clients?usr=a&search=${searchEl}`;
+function fetchData() {
+  const apiUrl = `http://213.230.120.247/kinoijro/hs/clients?usr=a`;
   const proxyUrl = "http://localhost:8080/";
 
   const username = "arx";
@@ -22,7 +22,6 @@ function fetchData(searchEl) {
     .then((response) => response.json())
     .then((data) => {
       data.forEach((el) => {
-        console.log(el);
         const newCard = document.createElement("div");
         newCard.classList.add("card");
         newCard.innerHTML = `
@@ -79,23 +78,12 @@ function fetchData(searchEl) {
 
 fetchData();
 
-searchInput.addEventListener("keyup", (e) => {
-  const searchIteam = e.target.value;
-  fetchData(searchIteam);
-});
-
-function oneInfo(data) {
-  console.log(data);
-}
-
-
-window.addEventListener("scroll", ()=> {
-  if(scrollY >= 25) {
+window.addEventListener("scroll", () => {
+  if (scrollY >= 25) {
     navbar.classList.add("nav_active");
-    navbarTitle.classList.add("title_active")
+    navbarTitle.classList.add("title_active");
   } else {
     navbar.classList.remove("nav_active");
-    navbarTitle.classList.remove("title_active")
+    navbarTitle.classList.remove("title_active");
   }
-})
-
+});
