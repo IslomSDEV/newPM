@@ -28,7 +28,7 @@ function fetchData(searchEl) {
         newCard.innerHTML = `
           <div class="img_and_name_flex">
             <div class="img_box">
-              <img class="card_img" src="${el?.photo}">
+              <img class="card_img" src="https://joqargikenes.uz/wp-content/uploads/2022/05/1-7.jpg">
             </div>
             <div class="name_box">
               <span class="span_name">Name:</span>
